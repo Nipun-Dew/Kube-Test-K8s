@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lugx-web-deployment
+spec:  
+  replicas: 1
+  selector:
+    matchLabels:  
+      app: lugx-web
+  template:
+    metadata:
+      labels:
+        app: lugx-web
+    spec:
+      containers:
+      - name: lugx-web
+        image: nipundew/lugx-web:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
