@@ -22,3 +22,17 @@ spec:
                 name: analytics
                 port:
                   number: 80
+          - path: /orders
+            pathType: Prefix
+            backend:
+              service:
+                name: orders
+                port:
+                  number: 80
+          - path: /games
+            pathType: Prefix
+            backend:
+              service:
+                name: games
+                port:
+                  number: 80

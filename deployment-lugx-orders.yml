@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      containers:
+        - name: orders
+          image: nipundew/lugx-orders:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              value: "jdbc:postgresql://neo-dew-14323.j77.aws-ap-south-1.cockroachlabs.cloud:26257/lugx-orders"
+            - name: DB_USERNAME
+              value: "neo-admin"
+            - name: DB_PASSWORD
+              value: "5_qoMVoyQAme48M1X7iJ4g"
