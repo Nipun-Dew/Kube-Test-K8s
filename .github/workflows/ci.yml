@@ -33,9 +33,9 @@ jobs:
             git pull origin master
             
             # Apply Kubernetes configurations
-            kubectl apply -f kube-configs/deployment-*.yml
-            kubectl apply -f kube-configs/service-*.yml
-            kubectl apply -f kube-configs/lugx-ingress.yml
+            kubectl apply -f deployment-*.yml
+            kubectl apply -f service-*.yml
+            kubectl apply -f lugx-ingress.yml
             
             # Check deployment status
             kubectl get deployments
