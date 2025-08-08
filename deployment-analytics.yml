@@ -23,5 +23,5 @@ spec:
               value: "https://agwalzudy4.ap-southeast-1.aws.clickhouse.cloud:8443"
             - name: CLICKHOUSE_USERNAME
               value: "default"
-            - name: CLICKHOUSE_PWD
+            - name: CLICKHOUSE_PASSWORD
               value: "gsY~y~Up0jHaC"
