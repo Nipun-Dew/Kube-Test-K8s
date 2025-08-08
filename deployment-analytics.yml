@@ -20,4 +20,8 @@ spec:
             - containerPort: 8080
           env:
             - name: CLICKHOUSE_ENDPOINT
-              value: "http://clickhouse:8123"
+              value: "https://agwalzudy4.ap-southeast-1.aws.clickhouse.cloud:8443"
+            - name: CLICKHOUSE_USERNAME
+              value: "default"
+            - name: CLICKHOUSE_PWD
+              value: "gsY~y~Up0jHaC"
