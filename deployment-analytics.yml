@@ -20,8 +20,17 @@ spec:
             - containerPort: 8080
           env:
             - name: CLICKHOUSE_ENDPOINT
-              value: "https://agwalzudy4.ap-southeast-1.aws.clickhouse.cloud:8443"
+              valueFrom:
+                secretKeyRef:
+                  name: lugx-secret
+                  key: CLICKHOUSE_ENDPOINT
             - name: CLICKHOUSE_USERNAME
-              value: "default"
+              valueFrom:
+                secretKeyRef:
+                  name: lugx-secret
+                  key: CLICKHOUSE_USERNAME
             - name: CLICKHOUSE_PASSWORD
-              value: "gsY~y~Up0jHaC"
+              valueFrom:
+                secretKeyRef:
+                  name: lugx-secret
+                  key: CLICKHOUSE_PASSWORD

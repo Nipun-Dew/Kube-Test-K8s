@@ -20,8 +20,17 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_URL
-              value: "jdbc:postgresql://neo-dew-14323.j77.aws-ap-south-1.cockroachlabs.cloud:26257/lugx-orders"
+              valueFrom:
+                secretKeyRef:
+                  name: lugx-secret
+                  key: ORDERS_DB_URL
             - name: DB_USERNAME
-              value: "neo-admin"
+              valueFrom:
+                secretKeyRef:
+                  name: lugx-secret
+                  key: DB_USERNAME
             - name: DB_PASSWORD
-              value: "5_qoMVoyQAme48M1X7iJ4g"
+              valueFrom:
+                secretKeyRef:
+                  name: lugx-secret
+                  key: DB_PASSWORD

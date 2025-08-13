@@ -32,6 +32,17 @@ jobs:
             # Pull latest changes from git
             git pull origin master
             
+            # Create/update Kubernetes Secret
+            kubectl create secret generic lugx-secret \
+            --from-literal=CLICKHOUSE_ENDPOINT="${{ secrets.CLICKHOUSE_ENDPOINT }}" \
+            --from-literal=CLICKHOUSE_USERNAME="${{ secrets.CLICKHOUSE_USERNAME }}" \
+            --from-literal=CLICKHOUSE_PASSWORD="${{ secrets.CLICKHOUSE_PASSWORD }}" \
+            --from-literal=GAMES_DB_URL="${{ secrets.GAMES_DB_URL }}" \
+            --from-literal=ORDERS_DB_URL="${{ secrets.ORDERS_DB_URL }}" \
+            --from-literal=DB_USERNAME="${{ secrets.DB_USERNAME }}" \
+            --from-literal=DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
+            --dry-run=client -o yaml | kubectl apply -f - || exit 1
+            
             # Apply Kubernetes configurations
             kubectl apply -f deployment-analytics.yml
             kubectl apply -f deployment-lugx-games.yml
