@@ -1,0 +1,98 @@
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+
+# Kubernetes specific
+# Secrets and sensitive data
+*secret*.yaml
+*secret*.yml
+secrets/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# Environment specific configs
+.env
+.env.local
+.env.*.local
+config.local.yaml
+config.local.yml
+
+# Helm specific
+charts/*.tgz
+.helm/
+
+# Terraform (if used)
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+
+# Build artifacts
+dist/
+build/
+target/
+bin/
+*.jar
+*.war
+*.ear
+
+# Node.js (if any scripts are used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if any scripts are used)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Runtime data
+pids/
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Documentation builds
+docs/_build/
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# Local development files
+docker-compose.override.yml
+.vagrant/
+
+# Minikube specific
+.minikube/
+
